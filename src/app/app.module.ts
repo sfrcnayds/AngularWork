@@ -20,6 +20,7 @@ import { LoginedUserComponent } from './students/logined-user/logined-user.compo
 import { TeachersComponent } from './teachers/teachers.component';
 import { CreateTeacherComponent } from './teachers/create-teacher/create-teacher.component';
 import { LoginTeacherComponent } from './teachers/login-teacher/login-teacher.component';
+import { CreateCourseComponent } from './teachers/create-course/create-course.component';
 
 @NgModule({
    declarations: [
@@ -31,7 +32,8 @@ import { LoginTeacherComponent } from './teachers/login-teacher/login-teacher.co
       LoginedUserComponent,
       TeachersComponent,
       CreateTeacherComponent,
-      LoginTeacherComponent
+      LoginTeacherComponent,
+      CreateCourseComponent
    ],
    imports: [
       BrowserModule,

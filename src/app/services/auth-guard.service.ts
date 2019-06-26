@@ -13,7 +13,7 @@ export class AuthGuardService implements CanActivate {
       this.router.navigate(['/student/login'], { queryParams: { returnUrl: state.url } });
       return false;
     } else if (state.url = '/teacher/home') {
-      const currentUser = sessionStorage.getItem('studentToken');
+      const currentUser = sessionStorage.getItem('teacherToken');
       if (currentUser) {
         return true;
       }
