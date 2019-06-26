@@ -1,0 +1,53 @@
+<body>
+    <div class="container">
+      <div class="col-md-6 mx-auto text-center">
+        <div class="header-title">
+          <h1 class="wv-heading--title">
+            Create Teacher
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mx-auto">
+          <div class="myform form ">
+            <form #createTeacherForm="ngForm" (ngSubmit)="createTeacher(createTeacherForm)">
+              <div class="form-group">
+                <input type="text" #name="ngModel" [(ngModel)]="model.name" name="name" class="form-control my-input" id="name" placeholder="Name" required />
+                <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">İsim Gereklidir</div>
+              </div>
+              <div class="form-group">
+                <input type="text" #surname="ngModel" [(ngModel)]="model.surname" name="surname" class="form-control my-input" id="surname" placeholder="Surname" required />
+                <div *ngIf="surname.invalid && surname.dirty" class="alert alert-danger">Soyisim Gereklidir</div>
+              </div>
+              <div class="form-group">
+                <input required type="email" #mail="ngModel" [(ngModel)]="model.email" name="email" class="form-control my-input" id="email" placeholder="Email" required email />
+                <div *ngIf="mail.invalid&&mail.dirty" class="alert alert-danger">Mail Gereklidir</div>
+              </div>
+              <div class="form-group">
+                <input type="password" #password="ngModel" [(ngModel)]="model.password" name="password" class="form-control my-input" id="password" placeholder="Password" required />
+                <div *ngIf="password.invalid&&password.dirty" class="alert alert-danger">Şifre Gereklidir</div>
+              </div>
+              <div class="form-group">
+                <select #departmentId="ngModel" [(ngModel)]="model.departmentId" name="departmentId" id="departmentId"
+                  class="form-control" required>
+                  <option *ngFor="let department of departments" [value]="department.id">{{department.name}}</option>
+                </select>
+                <div *ngIf="departmentId.invalid&&departmentId.touched" class="alert alert-danger">Departman Gereklidir</div>
+              </div>            
+              <div class="text-center ">
+                <button type="submit" class=" btn btn-block send-button tx-tfm" [disabled]="!createTeacherForm.valid">
+                  Create Teacher
+                </button>
+              </div>
+              <p class="small mt-3">
+                By signing up, you are indicating that you have read and agree to
+                the
+                <a href="#" class="ps-hero__content__link">Terms of Use</a> and
+                <a href="#">Privacy Policy</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
