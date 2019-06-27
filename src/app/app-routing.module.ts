@@ -9,11 +9,14 @@ import { LoginTeacherComponent } from './teachers/login-teacher/login-teacher.co
 import { TeachersComponent } from './teachers/teachers.component';
 import { CreateCourseComponent } from './teachers/create-course/create-course.component';
 import { ShowCoursesComponent } from './teachers/show-courses/show-courses.component';
+import { SelectCourseComponent } from './students/logined-user/select-course/select-course.component';
 
 const routes: Routes = [
   {path:'student/add',component: CreateStudentComponent},
   {path:'student/login',component:LoginStudentComponent},
-  {path:'student/home',component:LoginedUserComponent,canActivate:[AuthGuardService]},
+  {path:'student/home',component:LoginedUserComponent,canActivate:[AuthGuardService],children:[
+    {path:'selectCourse',component:SelectCourseComponent,outlet:'studentRouter'}
+  ]},
   {path:'teacher/add',component:CreateTeacherComponent},
   {path:'teacher/login',component:LoginTeacherComponent},
   {path:'teacher/home',component:TeachersComponent,canActivate:[AuthGuardService],children:[

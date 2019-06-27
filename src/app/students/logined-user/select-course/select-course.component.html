@@ -1,0 +1,25 @@
+<form #selectCourseForm="ngForm">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Teacher Name</th>
+        <th scope="col">Course Select</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of selectableCourses">
+        <th scope="row">{{ course.id }}</th>
+        <td>{{ course.name }}</td>
+        <td>{{ course.teacher.name }} {{ course.teacher.surname }}</td>
+        <td>
+          <input type="hidden" name="courseId" value="{{ course.id }}" />
+          <button class="btn btn-primary" (click)="selectCourse(course.id)">
+            Dersi sec
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
