@@ -1,0 +1,16 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses">
+        <th scope="row">{{course.id}}</th>
+        <td>{{course.name}}</td>
+        <td>{{course.department.name}}</td>
+      </tr>
+    </tbody>
+  </table>

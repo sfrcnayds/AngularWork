@@ -1,1 +1,29 @@
-<app-create-course></app-create-course>
+<div class="container-fluid">
+  <div class="row">
+      <div class="sidebar-sticky col-md-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/teacher/home">
+              <span data-feather="home"></span>
+              Teacher Page <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/teacher/home', {outlets: {'teacherRouter': ['createCourse']}}]">
+              <span data-feather="file"></span>
+              Create Course
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"[routerLink]="['/teacher/home', {outlets: {'teacherRouter': ['showCourses']}}]">
+              <span data-feather="shopping-cart"></span>
+              Show Courses
+            </a>
+          </li>
+        </ul>
+      </div>
+    <div class="col-md-9">
+        <router-outlet name="teacherRouter"></router-outlet>
+    </div>
+  </div>
+</div>

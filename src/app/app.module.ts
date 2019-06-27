@@ -21,6 +21,7 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { CreateTeacherComponent } from './teachers/create-teacher/create-teacher.component';
 import { LoginTeacherComponent } from './teachers/login-teacher/login-teacher.component';
 import { CreateCourseComponent } from './teachers/create-course/create-course.component';
+import { ShowCoursesComponent } from './teachers/show-courses/show-courses.component';
 
 @NgModule({
    declarations: [
@@ -33,7 +34,8 @@ import { CreateCourseComponent } from './teachers/create-course/create-course.co
       TeachersComponent,
       CreateTeacherComponent,
       LoginTeacherComponent,
-      CreateCourseComponent
+      CreateCourseComponent,
+      ShowCoursesComponent
    ],
    imports: [
       BrowserModule,
