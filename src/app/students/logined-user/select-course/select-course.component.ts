@@ -18,12 +18,14 @@ export class SelectCourseComponent implements OnInit {
   selectableCourses: Course[];
   constructor(private studentService: StudentService, private toastr: ToastrService, private router: Router) { }
   model: SelectCourse = new SelectCourse();
+
   ngOnInit() {
     this.studentService.getSelectableCourses().subscribe(data => {
       this.selectableCourses = data;
       console.log(this.selectableCourses);
     })
   }
+  
   selectCourse(courseId: number) {
     this.studentService.selectCourse(courseId).subscribe(data => {
       this.toastr.success('Course Selected Successfly', 'Success');

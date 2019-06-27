@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Student } from '../models/Student';
-import {tap,catchError} from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { tap } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
+
 import { Course } from '../models/Course';
+import { Student } from '../models/Student';
+
 @Injectable()
 export class StudentService {
 url:string = "https://localhost:44341/api/Students";
