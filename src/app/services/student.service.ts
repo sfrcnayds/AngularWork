@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { tap } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -54,5 +54,18 @@ jwtHelper: JwtHelperService = new JwtHelperService();
       courseId:courseId
     }
     return this.http.post((this.url + "/selectCourse"),object,{headers:headers});
+  }
+
+  showStudentCourses(){
+    let token = sessionStorage.getItem('token');
+    let headers =new HttpHeaders();
+    headers = headers.append("Content-Type","application/json");
+    headers = headers.append("Authorization",("Bearer " + token));
+    let decodedToken = this.jwtHelper.decodeToken(token);
+    let studentId = decodedToken.nameid;
+    let query = new HttpParams();
+    query = query.append("studentId",studentId);
+
+    return this.http.get<Course[]>((this.url + "/getSelectedCourses"),{headers:headers,params:query});
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { CreateStudentComponent } from './students/create-student/create-student.component';
 import { LoginStudentComponent } from './students/login-student/login-student.component';
 import { LoginedUserComponent } from './students/logined-user/logined-user.component';
@@ -10,12 +11,14 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { CreateCourseComponent } from './teachers/create-course/create-course.component';
 import { ShowCoursesComponent } from './teachers/show-courses/show-courses.component';
 import { SelectCourseComponent } from './students/logined-user/select-course/select-course.component';
+import { ShowCourseComponent } from './students/logined-user/show-course/show-course.component';
 
 const routes: Routes = [
   {path:'student/add',component: CreateStudentComponent},
   {path:'student/login',component:LoginStudentComponent},
   {path:'student/home',component:LoginedUserComponent,canActivate:[AuthGuardService],children:[
-    {path:'selectCourse',component:SelectCourseComponent,outlet:'studentRouter'}
+    {path:'selectCourse',component:SelectCourseComponent,outlet:'studentRouter'},
+    {path:'showCourses',component:ShowCourseComponent,outlet:'studentRouter'}
   ]},
   {path:'teacher/add',component:CreateTeacherComponent},
   {path:'teacher/login',component:LoginTeacherComponent},

@@ -1,0 +1,21 @@
+<form #selectCourseForm="ngForm">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Teacher Name</th>
+        <th scope="col">Mark</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let studentCourse of courses">
+        <th scope="row">{{ studentCourse.course.id }}</th>
+        <td>{{ studentCourse.course.name }}</td>
+        <td>{{ studentCourse.course.teacher.name }} {{ studentCourse.course.teacher.surname }}</td>
+        <td *ngIf="studentCourse.mark; else noMark">{{ studentCourse.mark }}</td>
+        <ng-template #noMark><td>---</td></ng-template>
+      </tr>
+    </tbody>
+  </table>
+</form>

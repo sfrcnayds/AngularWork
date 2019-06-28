@@ -23,6 +23,7 @@ import { LoginTeacherComponent } from './teachers/login-teacher/login-teacher.co
 import { CreateCourseComponent } from './teachers/create-course/create-course.component';
 import { ShowCoursesComponent } from './teachers/show-courses/show-courses.component';
 import { SelectCourseComponent } from './students/logined-user/select-course/select-course.component';
+import { ShowCourseComponent } from './students/logined-user/show-course/show-course.component';
 
 @NgModule({
    declarations: [
@@ -37,7 +38,8 @@ import { SelectCourseComponent } from './students/logined-user/select-course/sel
       LoginTeacherComponent,
       CreateCourseComponent,
       ShowCoursesComponent,
-      SelectCourseComponent
+      SelectCourseComponent,
+      ShowCourseComponent
    ],
    imports: [
       BrowserModule,
