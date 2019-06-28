@@ -9,7 +9,7 @@
     <tbody>
       <tr *ngFor="let course of courses">
         <th scope="row">{{course.id}}</th>
-        <td>{{course.name}}</td>
+        <td><a [routerLink]="['/teacher/home', {outlets: {'teacherRouter': ['showCoursesDetail',course.id]}}]" >{{course.name}}</a></td>
         <td>{{course.department.name}}</td>
       </tr>
     </tbody>

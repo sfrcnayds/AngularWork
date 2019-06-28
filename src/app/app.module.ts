@@ -24,6 +24,7 @@ import { CreateCourseComponent } from './teachers/create-course/create-course.co
 import { ShowCoursesComponent } from './teachers/show-courses/show-courses.component';
 import { SelectCourseComponent } from './students/logined-user/select-course/select-course.component';
 import { ShowCourseComponent } from './students/logined-user/show-course/show-course.component';
+import { ShowCoursesDetailComponent } from './teachers/show-courses-detail/show-courses-detail.component';
 
 @NgModule({
    declarations: [
@@ -39,7 +40,8 @@ import { ShowCourseComponent } from './students/logined-user/show-course/show-co
       CreateCourseComponent,
       ShowCoursesComponent,
       SelectCourseComponent,
-      ShowCourseComponent
+      ShowCourseComponent,
+      ShowCoursesDetailComponent
    ],
    imports: [
       BrowserModule,

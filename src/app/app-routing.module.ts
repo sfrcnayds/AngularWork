@@ -12,6 +12,7 @@ import { CreateCourseComponent } from './teachers/create-course/create-course.co
 import { ShowCoursesComponent } from './teachers/show-courses/show-courses.component';
 import { SelectCourseComponent } from './students/logined-user/select-course/select-course.component';
 import { ShowCourseComponent } from './students/logined-user/show-course/show-course.component';
+import { ShowCoursesDetailComponent } from './teachers/show-courses-detail/show-courses-detail.component';
 
 const routes: Routes = [
   {path:'student/add',component: CreateStudentComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'teacher/login',component:LoginTeacherComponent},
   {path:'teacher/home',component:TeachersComponent,canActivate:[AuthGuardService],children:[
     {path:'createCourse',component:CreateCourseComponent,outlet:'teacherRouter'},
-    {path:'showCourses',component:ShowCoursesComponent,outlet:'teacherRouter'}
+    {path:'showCourses',component:ShowCoursesComponent,outlet:'teacherRouter'},
+    {path:'showCoursesDetail/:courseId',component:ShowCoursesDetailComponent,outlet:'teacherRouter'}
   ]}
 ];
 

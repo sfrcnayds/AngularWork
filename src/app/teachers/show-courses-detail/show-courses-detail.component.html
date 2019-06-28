@@ -1,0 +1,31 @@
+<form id='myForm'>
+  <h3>{{course.name}}</h3>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Student Number</th>
+        <th scope="col">Student Name</th>
+        <th scope="col">Student Surname</th>
+        <th scope="col">Mark</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let courseStudent of courseStudents">
+        <th scope="row">{{courseStudent.student.number}}</th>
+        <td>{{courseStudent.student.name}}</td>
+        <td>{{courseStudent.student.surname}}</td>
+        <td *ngIf="courseStudent.mark;else noMark">{{courseStudent.mark}}</td>
+        <td *ngIf="!courseStudent.mark">
+          <button class="btn btn-primary" (click)="selectCourse(courseStudent.id)">
+            Kaydet
+          </button>
+        </td>
+        <ng-template #noMark>
+          <td><input type="text" ([value])="number" name="{{courseStudent.id}}" id="{{courseStudent.id}}" /></td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
