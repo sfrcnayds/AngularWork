@@ -1,17 +1,17 @@
 <form #loginStudentForm="ngForm" (ngSubmit)="loginStudent(loginStudentForm)" class="form-signin">
   <div class="text-center mb-4">
-    <h1 class="h3 mb-3 font-weight-normal">Student Login</h1>
+    <h1 class="h3 mb-3 font-weight-normal" translate>loginStudent.title</h1>
   </div>
   
   <div class="form-label-group">
-    <input #number="ngModel" [(ngModel)]="model.number" name="number" type="number" id="number" class="form-control" placeholder="School Number" required autofocus email>
-    <label for="inputEmail">School Number</label>
+    <input #number="ngModel" [(ngModel)]="model.number" name="number" type="number" id="number" class="form-control" placeholder="{{'loginStudent.schoolNumber' | translate}}" required autofocus email>
+    <label for="inputEmail">{{'loginStudent.schoolNumber' | translate}}</label>
   </div>
   
   <div class="form-label-group">
-    <input #password="ngModel" [(ngModel)]="model.password" name="password" type="password" id="password" class="form-control" placeholder="Password" required>
-    <label for="inputPassword">Password</label>
+    <input #password="ngModel" [(ngModel)]="model.password" name="password" type="password" id="password" class="form-control" placeholder="{{'loginStudent.password' | translate}}" required>
+    <label for="inputPassword">{{'loginStudent.password' | translate}}</label>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">{{'loginStudent.loginButton' | translate}}</button>
   <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p>
 </form>

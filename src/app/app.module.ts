@@ -10,11 +10,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { CreateStudentComponent } from './students/create-student/create-student.component';
 import { FormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginStudentComponent } from './students/login-student/login-student.component';
 import { LoginedUserComponent } from './students/logined-user/logined-user.component';
 import { TeachersComponent } from './teachers/teachers.component';
@@ -26,6 +26,9 @@ import { SelectCourseComponent } from './students/logined-user/select-course/sel
 import { ShowCourseComponent } from './students/logined-user/show-course/show-course.component';
 import { ShowCoursesDetailComponent } from './teachers/show-courses-detail/show-courses-detail.component';
 
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 @NgModule({
    declarations: [
       AppComponent,
@@ -52,7 +55,14 @@ import { ShowCoursesDetailComponent } from './teachers/show-courses-detail/show-
       TooltipModule.forRoot(),
       ModalModule.forRoot(),
       ToastrModule.forRoot(),
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      TranslateModule.forRoot({
+         loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+         }
+      })
    ],
    providers: [],
    bootstrap: [
@@ -60,3 +70,7 @@ import { ShowCoursesDetailComponent } from './teachers/show-courses-detail/show-
    ]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+   return new TranslateHttpLoader(http);
+}

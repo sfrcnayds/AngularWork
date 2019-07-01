@@ -1,0 +1,36 @@
+{
+    "nav": {
+        "title": "School Automation",
+        "first": "Home",
+        "second": "Student Register",
+        "third": "Teacher Register",
+        "fourth": "Student Login",
+        "fifth": "Teacher Login",
+        "greeting" : "Signed in as {{ name }}",
+        "quit" : "Log Out!",
+        "studentSignIn": "Student Sign In",
+        "teacherSignIn": "Teacher Sign In"
+    },
+    "createStudent":{
+        "title" : "Create Student",
+        "name" :"Name",
+        "nameError" :"Name is Required",
+        "surname" : "Surname",
+        "surnameError" : "Surname is Required",
+        "mail" : "E-Mail",
+        "mailError" : "E-Mail is Required",
+        "schoolNumber" : "School Number",
+        "schoolNumberError" : "School Number is Required",
+        "password" : "Password",
+        "passwordError" : "Password is Required",
+        "department" : "Select your department",
+        "departmentError" : "Department is Required",
+        "createButton" : "Create Student"
+    },
+    "loginStudent" : {
+        "title": "Student Login",
+        "schoolNumber" : "School Number",
+        "password" : "Password",
+        "loginButton" : "Sign In"
+    }
+}

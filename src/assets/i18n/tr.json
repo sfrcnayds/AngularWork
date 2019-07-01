@@ -1,0 +1,36 @@
+{
+    "nav": {
+        "title": "Okul Otomasyonu",
+        "first": "Anasayfa",
+        "second": "Öğrenci Kayıt",
+        "third": "Öğretmen Kayıt",
+        "fourth": "Öğrenci Girişi",
+        "fifth": "Öğretmen Girişi",
+        "greeting" : "Hoşgeldini {{ name }}",
+        "quit" : "Çıkış Yap!",
+        "studentSignIn": "Öğrenci Kayıt Ol",
+        "teacherSignIn": "Öğretmen Kayıt Ol"
+    },
+    "createStudent":{
+        "title" : "Öğrenci Oluştur",
+        "name" :"İsim",
+        "nameError" :"İsim Gereklidir",
+        "surname" : "Soyisim",
+        "surnameError" : "Soyisim Gereklidir",
+        "mail" : "E-Posta",
+        "mailError" : "E-Posta Gereklidir",
+        "schoolNumber" : "Okul Numarası",
+        "schoolNumberError" : "Okul Numarası Gereklidir",
+        "password" : "Şifre",
+        "passwordError" : "Şifre Gereklidir",
+        "department" : "Departmanı Seçimiz",
+        "departmentError" : "Departman Gereklidir",
+        "createButton" : "Öğrenci Oluştur"
+    },
+    "loginStudent" : {
+        "title": "Öğrenci Girişi",
+        "schoolNumber" : "Öğrenci Numarası",
+        "password" : "Şifre",
+        "loginButton" : "Giriş Yap"
+    }
+}
