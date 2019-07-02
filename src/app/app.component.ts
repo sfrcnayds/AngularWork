@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'school-spa';
   constructor(private translate: TranslateService) {
-    translate.setDefaultLang('tr');
+    this.translate.setDefaultLang('en');
+    this.translate.currentLang = 'en';
   }
 }

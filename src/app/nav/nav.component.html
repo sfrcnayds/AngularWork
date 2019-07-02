@@ -13,23 +13,44 @@
         <a class="nav-link" [routerLink]="['/student/add']" translate>nav.second</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/teacher/add']" translate>nav.third</a>
-        </li>
+        <a class="nav-link" [routerLink]="['/teacher/add']" translate>nav.third</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/student/login']" translate>nav.fourth</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/teacher/login']" translate>nav.fifth</a>
+        <a class="nav-link" [routerLink]="['/teacher/login']" translate>nav.fifth</a>
+      </li>
+
+      <li class="nav-item dropdown" *ngIf="currentLang=='en';else turkishLang">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> English</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown09">
+          <a class="dropdown-item" href="#tr" (click)="switchLanguage('tr')"><span class="flag-icon flag-icon-tr">
+            </span> Türkçe</a>
+        </div>
+      </li>
+      <ng-template #turkishLang>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-tr"> </span> Türkçe</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown09">
+            <a class="dropdown-item" href="#en" (click)="switchLanguage('en')"><span class="flag-icon flag-icon-us">
+              </span> English</a>
+          </div>
         </li>
+      </ng-template>
+      
     </ul>
   </div>
-  <p *ngIf="loginedUser; else notLogin" class="navbar-text navbar-right" translate [translateParams]='{name : loginedUser.unique_name}'>
+  <p *ngIf="loginedUser; else notLogin" class="navbar-text navbar-right" translate
+    [translateParams]='{name : loginedUser.unique_name}'>
     nav.greeting
     <a href="javascript:;" (click)="logOut()" class="navbar-link" translate> nav.quit</a>
   </p>
   <ng-template #notLogin>
     <p class="navbar-text navbar-right" style="margin-top: 7px">
-      <a [routerLink]="['/student/login']" class="navbar-link" translate>nav.studentSignIn&nbsp;&nbsp;</a>
+      <a [routerLink]="['/student/login']" class="navbar-link" translate>nav.studentSignIn &nbsp;&nbsp;</a>
       <a [routerLink]="['/teacher/login']" class="navbar-link" translate>nav.teacherSignIn</a>
     </p>
   </ng-template>
