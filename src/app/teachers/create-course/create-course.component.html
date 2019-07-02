@@ -1,28 +1,29 @@
-<body>
-    <div class="container">
-      <div class="col-md-6 mx-auto text-center">
-        <div class="header-title">
-          <h1 class="wv-heading--title">
-            Create Course
-          </h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 mx-auto">
-          <div class="myform form ">
-            <form #createCourseForm="ngForm" (ngSubmit)="createCourse(createCourseForm)">
-              <div class="form-group">
-                <input type="text" #name="ngModel" [(ngModel)]="model.name" name="name" class="form-control my-input" id="name" placeholder="Name" required />
-                <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">İsim Gereklidir</div>
-              </div>       
-              <div class="text-center">
-                <button type="submit" class=" btn btn-block send-button tx-tfm" [disabled]="!createCourseForm.valid">
-                  Create Course
-                </button>
-              </div>
-            </form>
-          </div>
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <h1 class="wv-heading--title" translate>
+        createCourse.title
+      </h1>
+    </div>
+    <div class="card-body">
+      <div class="col-md-4 mx-auto">
+        <div class="myform form ">
+          <form #createCourseForm="ngForm" (ngSubmit)="createCourse(createCourseForm)">
+            <div class="form-group">
+              <input type="text" #name="ngModel" [(ngModel)]="model.name" name="name" class="form-control my-input"
+                id="name" placeholder="{{'createCourse.name' | translate}}" required />
+              <div *ngIf="name.invalid && name.dirty" class="alert alert-danger" translate>createCourse.nameError</div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-block send-button tx-tfm" [disabled]="!createCourseForm.valid" translate>
+                createCourse.createButton
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+
+</div>

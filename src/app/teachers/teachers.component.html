@@ -5,19 +5,19 @@
           <li class="nav-item">
             <a class="nav-link active" routerLink="/teacher/home">
               <span data-feather="home"></span>
-              Teacher Page <span class="sr-only">(current)</span>
+              {{'teacherPage.title' | translate}} <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/teacher/home', {outlets: {'teacherRouter': ['createCourse']}}]">
               <span data-feather="file"></span>
-              Create Course
+              {{'teacherPage.createCourse' | translate}}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link"[routerLink]="['/teacher/home', {outlets: {'teacherRouter': ['showCourses']}}]">
               <span data-feather="shopping-cart"></span>
-              Show Courses
+              {{'teacherPage.showCourses' | translate}}
             </a>
           </li>
           

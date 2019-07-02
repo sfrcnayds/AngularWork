@@ -32,5 +32,50 @@
         "schoolNumber" : "School Number",
         "password" : "Password",
         "loginButton" : "Sign In"
+    },
+    "loginedUser": {
+        "title" : "Student Page",
+        "course": "Select Course",
+        "showCourse" : "Show My Courses"
+    },
+    "selectCourse" : {
+        "courseName" : "Course Name",
+        "teacherName" : "Teacher Name",
+        "courseSelect" : "Course Select",
+        "courseButton" : "Select Course",
+        "mark" : "Mark"
+    },
+    "teacherPage" : {
+        "title" : "Teacher Page",
+        "createCourse" : "Create Course",
+        "showCourses" : "Show Courses"
+    },
+    "createCourse" : {
+        "title" : "Create Course",
+        "name" : "Name",
+        "nameError" : "Name is Required",
+        "createButton" : "Create Course"
+    },
+    "createTeacher" : {
+        "title" : "Create Teacher",
+        "name" :"Name",
+        "nameError" :"Name is Required",
+        "surname" : "Surname",
+        "surnameError" : "Surname is Required",
+        "mail" : "E-Mail",
+        "mailError" : "E-Mail is Required",
+        "schoolNumber" : "School Number",
+        "schoolNumberError" : "School Number is Required",
+        "password" : "Password",
+        "passwordError" : "Password is Required",
+        "department" : "Select your department",
+        "departmentError" : "Department is Required",
+        "createButton" : "Create Teacher"
+    },
+    "loginTeacher" : {
+        "title" : "Teacher Login",
+        "email" : "Email",
+        "password" : "Password",
+        "loginButton" : "Sign in"
     }
 }

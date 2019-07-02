@@ -3,9 +3,9 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Course Name</th>
-        <th scope="col">Teacher Name</th>
-        <th scope="col">Course Select</th>
+        <th scope="col" translate>selectCourse.courseName</th>
+        <th scope="col" translate>selectCourse.teacherName</th>
+        <th scope="col" translate>selectCourse.courseSelect</th>
       </tr>
     </thead>
     <tbody>
@@ -15,8 +15,8 @@
         <td>{{ course.teacher.name }} {{ course.teacher.surname }}</td>
         <td>
           <input type="hidden" name="courseId" value="{{ course.id }}" />
-          <button class="btn btn-primary" (click)="selectCourse(course.id)">
-            Dersi sec
+          <button class="btn btn-primary" (click)="selectCourse(course.id)" translate>
+            selectCourse.courseButton
           </button>
         </td>
       </tr>

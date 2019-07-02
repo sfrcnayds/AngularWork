@@ -32,5 +32,48 @@
         "schoolNumber" : "Öğrenci Numarası",
         "password" : "Şifre",
         "loginButton" : "Giriş Yap"
+    },
+    "loginedUser": {
+        "title" : "Öğrenci Sayfası",
+        "course": "Ders Seç",
+        "showCourse" : "Derslerimi Göster"
+    },
+    "selectCourse" : {
+        "courseName" : "Ders Adı",
+        "teacherName" : "Öğretmen Adı",
+        "courseSelect" : "Ders Seçimi",
+        "courseButton" : "Dersi Seç",
+        "mark" : "Not"
+    },
+    "teacherPage" : {
+        "title" : "Öğretmen Sayfası",
+        "createCourse" : "Ders Oluştur",
+        "showCourses" : "Dersleri Göster"
+    },
+    "createCourse" : {
+        "title" : "Ders Ekle",
+        "name" : "Ders Adı",
+        "nameError" : "Ders Adı Zorunludur",
+        "createButton" : "Ders Oluştur"
+    },
+    "createTeacher" : {
+        "title" : "Öğretmen Oluştur",
+        "name" :"İsim",
+        "nameError" :"İsim Gereklidir",
+        "surname" : "Soyisim",
+        "surnameError" : "Soyisim Gereklidir",
+        "mail" : "E-Posta",
+        "mailError" : "E-Posta Gereklidir",
+        "password" : "Şifre",
+        "passwordError" : "Şifre Gereklidir",
+        "department" : "Departmanı Seçimiz",
+        "departmentError" : "Departman Gereklidir",
+        "createButton" : "Öğretmen Oluştur"
+    },
+    "loginTeacher" : {
+        "title" : "Öğretmen Girişi",
+        "email" : "E-Posta",
+        "password" : "Şifre",
+        "loginButton" : "Giriş Yap"
     }
 }
