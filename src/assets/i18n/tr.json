@@ -6,7 +6,7 @@
         "third": "Öğretmen Kayıt",
         "fourth": "Öğrenci Girişi",
         "fifth": "Öğretmen Girişi",
-        "greeting" : "Hoşgeldini {{ name }}",
+        "greeting" : "Hoşgeldiniz {{ name }}",
         "quit" : "Çıkış Yap!",
         "studentSignIn": "Öğrenci Kayıt Ol",
         "teacherSignIn": "Öğretmen Kayıt Ol"

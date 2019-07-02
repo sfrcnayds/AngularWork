@@ -1,56 +1,56 @@
-<div class="container">
-  <div class="col-md-6 mx-auto text-center">
-    <div class="header-title">
-      <h1 class="wv-heading--title" translate>
-        createTeacher.title
-      </h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 mx-auto">
-      <div class="myform form">
-        <form #createTeacherForm="ngForm" (ngSubmit)="createTeacher(createTeacherForm)">
-          <div class="form-group">
-            <input type="text" #name="ngModel" [(ngModel)]="model.name" name="name" class="form-control my-input"
-              id="name" placeholder="{{'createTeacher.name' | translate}}" required />
-            <div *ngIf="name.invalid && name.dirty" class="alert alert-danger" translate>createTeacher.nameError</div>
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="myform form">
+      <form #createTeacherForm="ngForm" (ngSubmit)="createTeacher(createTeacherForm)">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="wv-heading--title text-center" translate>
+              createTeacher.title
+            </h1>
           </div>
-          <div class="form-group">
-            <input type="text" #surname="ngModel" [(ngModel)]="model.surname" name="surname"
-              class="form-control my-input" id="surname" placeholder="{{'createTeacher.surname' | translate}}"
-              required />
-            <div *ngIf="surname.invalid && surname.dirty" class="alert alert-danger" translate>
-              createTeacher.surnameError</div>
+          <div class="card-body">
+            <div class="form-group">
+              <input type="text" #name="ngModel" [(ngModel)]="model.name" name="name" class="form-control my-input"
+                id="name" placeholder="{{'createTeacher.name' | translate}}" required />
+              <div *ngIf="name.invalid && name.dirty" class="alert alert-danger" translate>createTeacher.nameError</div>
+            </div>
+            <div class="form-group">
+              <input type="text" #surname="ngModel" [(ngModel)]="model.surname" name="surname"
+                class="form-control my-input" id="surname" placeholder="{{'createTeacher.surname' | translate}}"
+                required />
+              <div *ngIf="surname.invalid && surname.dirty" class="alert alert-danger" translate>
+                createTeacher.surnameError</div>
+            </div>
+            <div class="form-group">
+              <input required type="email" #mail="ngModel" [(ngModel)]="model.email" name="email"
+                class="form-control my-input" id="email" placeholder="{{'createTeacher.mail' | translate}}" required
+                email />
+              <div *ngIf="mail.invalid&&mail.dirty" class="alert alert-danger" translate>createTeacher.mailError</div>
+            </div>
+            <div class="form-group">
+              <input type="password" #password="ngModel" [(ngModel)]="model.password" name="password"
+                class="form-control my-input" id="password" placeholder="{{'createTeacher.password' | translate}}"
+                required />
+              <div *ngIf="password.invalid&&password.dirty" class="alert alert-danger" translate>
+                createTeacher.passwordError</div>
+            </div>
+            <div class="form-group">
+              <select #departmentId="ngModel" [(ngModel)]="model.departmentId" name="departmentId" id="departmentId"
+                class="form-control" required>
+                <option *ngFor="let department of departments" [value]="department.id">{{department.name}}</option>
+              </select>
+              <div *ngIf="departmentId.invalid&&departmentId.touched" class="alert alert-danger" translate>
+                createTeacher.createButton</div>
+            </div>
+            <div class="text-center ">
+              <button type="submit" class=" btn btn-block send-button tx-tfm" [disabled]="!createTeacherForm.valid"
+                translate>
+                createTeacher.createButton
+              </button>
+            </div>
           </div>
-          <div class="form-group">
-            <input required type="email" #mail="ngModel" [(ngModel)]="model.email" name="email"
-              class="form-control my-input" id="email" placeholder="{{'createTeacher.mail' | translate}}" required
-              email />
-            <div *ngIf="mail.invalid&&mail.dirty" class="alert alert-danger" translate>createTeacher.mailError</div>
-          </div>
-          <div class="form-group">
-            <input type="password" #password="ngModel" [(ngModel)]="model.password" name="password"
-              class="form-control my-input" id="password" placeholder="{{'createTeacher.password' | translate}}"
-              required />
-            <div *ngIf="password.invalid&&password.dirty" class="alert alert-danger" translate>
-              createTeacher.passwordError</div>
-          </div>
-          <div class="form-group">
-            <select #departmentId="ngModel" [(ngModel)]="model.departmentId" name="departmentId" id="departmentId"
-              class="form-control" required>
-              <option *ngFor="let department of departments" [value]="department.id">{{department.name}}</option>
-            </select>
-            <div *ngIf="departmentId.invalid&&departmentId.touched" class="alert alert-danger" translate>
-              createTeacher.createButton</div>
-          </div>
-          <div class="text-center ">
-            <button type="submit" class=" btn btn-block send-button tx-tfm" [disabled]="!createTeacherForm.valid"
-              translate>
-              createTeacher.createButton
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

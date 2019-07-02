@@ -1,30 +1,20 @@
 <div class="container-fluid">
   <div class="row">
-      <div class="sidebar-sticky col-md-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/teacher/home">
-              <span data-feather="home"></span>
-              {{'teacherPage.title' | translate}} <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/teacher/home', {outlets: {'teacherRouter': ['createCourse']}}]">
-              <span data-feather="file"></span>
-              {{'teacherPage.createCourse' | translate}}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"[routerLink]="['/teacher/home', {outlets: {'teacherRouter': ['showCourses']}}]">
-              <span data-feather="shopping-cart"></span>
-              {{'teacherPage.showCourses' | translate}}
-            </a>
-          </li>
-          
-        </ul>
+    <div class="col-md-3">
+      <div class="list-group" role="tablist">
+        <a class="list-group-item list-group-item-action active" routerLink="/teacher/home" data-toggle="list">
+          {{'teacherPage.title' | translate}}
+        </a>
+        <a class="list-group-item list-group-item-action" [routerLink]="['/teacher/home', {outlets: {'teacherRouter': ['createCourse']}}]" data-toggle="list">
+          {{'teacherPage.createCourse' | translate}}
+        </a>
+        <a class="list-group-item list-group-item-action" [routerLink]="['/teacher/home', {outlets: {'teacherRouter': ['showCourses']}}]" data-toggle="list">
+          {{'teacherPage.showCourses' | translate}}
+        </a>
       </div>
+    </div>
     <div class="col-md-9">
-        <router-outlet name="teacherRouter"></router-outlet>
+      <router-outlet name="teacherRouter"></router-outlet>
     </div>
   </div>
 </div>
