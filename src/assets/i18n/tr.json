@@ -81,5 +81,9 @@
         "studentName" : "Öğrenci Adı",
         "studentSurname" : "Öğrenci Soyadı",
         "mark" : "Notu"
+    },
+    "showCourses" : {
+        "name" : "Ders Adı",
+        "department" : "Departman"
     }
 }

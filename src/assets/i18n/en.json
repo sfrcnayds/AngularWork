@@ -83,5 +83,9 @@
         "studentName" : "Student Name",
         "studentSurname" : "Student Surname",
         "mark" : "Mark"
+    },
+    "showCourses" : {
+        "name" : "Course Name",
+        "department" : "Department"
     }
 }
