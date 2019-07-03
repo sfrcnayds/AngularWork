@@ -43,13 +43,13 @@
       
     </ul>
   </div>
-  <p *ngIf="loginedUser; else notLogin" class="navbar-text navbar-right" translate
+  <p *ngIf="loginedUser; else notLogin" class="navbar-text navbar-right links" translate
     [translateParams]='{name : loginedUser.unique_name}'>
     nav.greeting
     <a href="javascript:;" (click)="logOut()" class="navbar-link" translate> nav.quit</a>
   </p>
   <ng-template #notLogin>
-    <p class="navbar-text navbar-right" style="margin-top: 7px">
+    <p class="navbar-text navbar-right links" style="margin-top: 7px">
       <a [routerLink]="['/student/login']" class="navbar-link" translate>nav.studentSignIn &nbsp;&nbsp;</a>
       <a [routerLink]="['/teacher/login']" class="navbar-link" translate>nav.teacherSignIn</a>
     </p>
