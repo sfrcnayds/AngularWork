@@ -6,6 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { Course } from '../models/Course';
 import { Student } from '../models/Student';
+import { AddCourseMark } from '../models/addCourseMark';
 
 @Injectable()
 export class StudentService {
@@ -67,5 +68,13 @@ jwtHelper: JwtHelperService = new JwtHelperService();
     query = query.append("studentId",studentId);
 
     return this.http.get<Course[]>((this.url + "/getSelectedCourses"),{headers:headers,params:query});
+  }
+
+  addCourseMark(mark : AddCourseMark){
+    let token = sessionStorage.getItem('teacherToken');
+    let headers =new HttpHeaders();
+    headers = headers.append("Content-Type","application/json");
+    headers = headers.append("Authorization",("Bearer " + token));    
+    return this.http.post<Course[]>((this.url + "/addMark"),mark,{headers:headers});
   }
 }

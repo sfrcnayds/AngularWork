@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TeacherService } from 'src/app/services/teacher.service';
 import { Course } from 'src/app/models/Course';
-import { Form, NgForm } from '@angular/forms';
+import { Form, NgForm, FormArray, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-show-courses-detail',
@@ -12,21 +12,31 @@ import { Form, NgForm } from '@angular/forms';
 })
 export class ShowCoursesDetailComponent implements OnInit {
 
-  constructor(private router:ActivatedRoute,private teacherService:TeacherService) { }
+  constructor(private router: ActivatedRoute, private teacherService: TeacherService, private formBuilder: FormBuilder) { }
 
-  course:Course = new Course();
-  courseStudents:any;
+  studentMarkAddForms :FormGroup;
+
+  course: Course = new Course();
+  courseStudents: any;
   number = 0;
   ngOnInit() {
-    let courseId:number = Number.parseInt(this.router.snapshot.paramMap.get("courseId"));
-    this.teacherService.getCourseDetail(courseId).subscribe(data=>{
+    let courseId: number = Number.parseInt(this.router.snapshot.paramMap.get("courseId"));
+    this.teacherService.getCourseDetail(courseId).subscribe(data => {
       this.course = data.course;
       this.courseStudents = data.courseStudents;
       console.log(this.course);
       console.log(this.courseStudents);
     })
   }
-  selectCourse(asd){
-    console.log(document.getElementById(asd));
+
+  createStudentMarkAddForms() {
+    let studentCourses = {}
+    this.courseStudents.forEach(cs => {
+      studentCourses[cs.id] = new FormControl
+    });
+  }
+
+  onSubmit(courseStudentId){
+    console.log(this.studentMarkAddForms.get(courseStudentId))
   }
 }

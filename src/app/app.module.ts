@@ -12,7 +12,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { CreateStudentComponent } from './students/create-student/create-student.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginStudentComponent } from './students/login-student/login-student.component';
@@ -29,6 +29,7 @@ import { ShowCoursesDetailComponent } from './teachers/show-courses-detail/show-
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { StudentAddMarkFormComponent } from './teachers/show-courses-detail/student-add-mark-form/student-add-mark-form.component';
 @NgModule({
    declarations: [
       AppComponent,
@@ -44,9 +45,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
       ShowCoursesComponent,
       SelectCourseComponent,
       ShowCourseComponent,
-      ShowCoursesDetailComponent
+      ShowCoursesDetailComponent,
+      StudentAddMarkFormComponent
    ],
    imports: [
+      ReactiveFormsModule,
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
