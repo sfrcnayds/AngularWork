@@ -30,6 +30,8 @@ import { ShowCoursesDetailComponent } from './teachers/show-courses-detail/show-
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { StudentAddMarkFormComponent } from './teachers/show-courses-detail/student-add-mark-form/student-add-mark-form.component';
+import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -65,7 +67,8 @@ import { StudentAddMarkFormComponent } from './teachers/show-courses-detail/stud
             useFactory: HttpLoaderFactory,
             deps: [HttpClient]
          }
-      })
+      }),
+      PDFExportModule
    ],
    providers: [],
    bootstrap: [

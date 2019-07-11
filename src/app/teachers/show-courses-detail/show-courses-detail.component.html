@@ -1,5 +1,9 @@
-<h3>{{course.name}}</h3>
-<table class="table">
+<div class="row">
+  <h3 class="col-md-9">{{course.name}}</h3>
+  <button class="btn btn-dark col-md-3" (click)="downloadPDF()">Save As PDF</button>
+</div>
+
+<table class="table" id="courseDetailTable" style="margin-top: 5px">
   <thead class="thead-dark">
     <tr>
       <th scope="col" translate>showCoursesDetail.studentNumber</th>
