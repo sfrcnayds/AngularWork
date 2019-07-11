@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 
 import { Course } from 'src/app/models/Course';
 import { StudentService } from 'src/app/services/student.service';
 import { SelectCourse } from 'src/app/models/SelectCourse';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-select-course',
@@ -16,7 +15,7 @@ import { Router } from '@angular/router';
 export class SelectCourseComponent implements OnInit {
 
   selectableCourses: Course[];
-  constructor(private studentService: StudentService, private toastr: ToastrService, private router: Router) { }
+  constructor(private studentService: StudentService, private toastr: ToastrService, private translate: TranslateService) { }
   model: SelectCourse = new SelectCourse();
 
   ngOnInit() {
@@ -25,13 +24,13 @@ export class SelectCourseComponent implements OnInit {
       console.log(this.selectableCourses);
     })
   }
-  
+
   selectCourse(courseId: number) {
     this.studentService.selectCourse(courseId).subscribe(data => {
-      this.toastr.success('Course Selected Successfly', 'Success');
+      this.toastr.success(this.translate.instant("selectCourseInformation.succesMessage"), this.translate.instant("selectCourseInformation.succesMessageHeader"));
       this.ngOnInit();
     }, error => {
-      this.toastr.error('Bir hata oluştu', 'Hata');
+      this.toastr.error(this.translate.instant("selectCourseInformation.errorMessage"), this.translate.instant("selectCourseInformation.errorHeader"));
     });
   }
 }

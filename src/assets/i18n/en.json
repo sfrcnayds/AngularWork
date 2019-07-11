@@ -87,5 +87,24 @@
     "showCourses" : {
         "name" : "Course Name",
         "department" : "Department"
+    },
+    "showInformation" : {
+        "succesMessage" : "Successfull Login",
+        "errorMessage" : "Wrong username or password",
+        "errorMessageHeader" : "Error",
+        "succesMessageHeader" : "Welcome!"
+    },
+    "createStudentInformation":{
+        "succesMessage": "Create Succesfuly",
+        "succesMessageHeader" : "Successful",
+        "errorHeader": "Error",
+        "errorMessage" : "Create Unsuccessful",
+        "existError" : "Please enter not existing email or number"
+    },
+    "selectCourseInformation":{
+        "succesMessage": "Course Selected Successfly",
+        "succesMessageHeader" : "Success",
+        "errorHeader": "Error",
+        "errorMessage" : "Unexpected Error"
     }
 }

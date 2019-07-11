@@ -85,5 +85,24 @@
     "showCourses" : {
         "name" : "Ders Adı",
         "department" : "Departman"
+    },
+    "showInformation" : {
+        "succesMessage" : "Başarılı Giriş",
+        "errorMessage" : "Hatalı kullanıcı adı veya şifre",
+        "errorMessageHeader" : "Hata",
+        "succesMessageHeader" : "Hoşgeldiniz!"
+    },
+    "createStudentInformation":{
+        "succesMessage": "Kayıt Başarılı",
+        "succesMessageHeader" : "Başarılı",
+        "errorHeader": "Hata",
+        "errorMessage" : "Kayıt Başarısız",
+        "existError" : "Olmayan bir mail veya numara giriniz"
+    },
+    "selectCourseInformation":{
+        "succesMessage": "Ders Başarıyla Seçildi",
+        "succesMessageHeader" : "Başarılı",
+        "errorHeader": "Hata",
+        "errorMessage" : "Bir hata oluştu"
     }
 }

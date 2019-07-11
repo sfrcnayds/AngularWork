@@ -8,6 +8,7 @@ import { StudentService } from 'src/app/services/student.service';
 import { ToastrService } from 'ngx-toastr';
 import { tap, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-student',
@@ -16,7 +17,8 @@ import { throwError } from 'rxjs';
   providers: [DepartmentService, StudentService]
 })
 export class CreateStudentComponent implements OnInit {
-  constructor(private departmentService: DepartmentService, private studentService: StudentService, private toastr: ToastrService) { }
+  constructor(private departmentService: DepartmentService, private studentService: StudentService, 
+    private toastr: ToastrService,private translate:TranslateService) { }
 
   model: Student = new Student();
 
@@ -34,19 +36,18 @@ export class CreateStudentComponent implements OnInit {
         res => console.log('HTTP response', res),
         err => {
           if(err.status != 400){
-            this.toastr.error('Kayıt Başarısız', 'Hata');
+            this.toastr.error(this.translate.instant("createStudentInformation.errorMessage"), this.translate.instant("createStudentInformation.errorHeader"));
             return;
           }
           console.log('HTTP error' , err);
-          this.toastr.error('Olmayan bir mail veya numara giriniz','Hata')
+          this.toastr.error(this.translate.instant("createStudentInformation.existError"),this.translate.instant("createStudentInformation.errorHeader"))
          },
         () => {
-          console.log('HTTP request completed.');
-          this.toastr.success('Kayıt Başarılı', 'Başarılı');
+          this.toastr.success(this.translate.instant("createStudentInformation.succesMessage"), this.translate.instant("createStudentInformation.succesMessageHeader"));
           form.reset();
         });
     } else {
-      this.toastr.error('Kayıt Başarısız', 'Hata');
+      this.toastr.error(this.translate.instant("createStudentInformation.errorMessage"), this.translate.instant("createStudentInformation.errorHeader"));
     }
   }
 

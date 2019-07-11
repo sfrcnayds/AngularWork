@@ -10,14 +10,14 @@ export class CourseService {
   url = "https://localhost:44341/api/courses"
 
   createCourse(course: CreateCourse) {
-    let headers =new HttpHeaders();
-    headers = headers.append("Authorization",("Bearer " + sessionStorage.getItem('teacherToken')));
-    return this.http.post(this.url, course,{headers:headers}).pipe();
+    let headers = new HttpHeaders();
+    headers = headers.append("Authorization", ("Bearer " + sessionStorage.getItem('teacherToken')));
+    return this.http.post(this.url, course, { headers: headers }).pipe();
   }
 
   getCourseByTeacherId(teacherId) {
-    let headers =new HttpHeaders();
-    headers = headers.append("Authorization",("Bearer " + sessionStorage.getItem('teacherToken')));
-    return this.http.get<Course[]>(this.url + "/teacherCourses?teacherId="+teacherId,{headers:headers});
+    let headers = new HttpHeaders();
+    headers = headers.append("Authorization", ("Bearer " + sessionStorage.getItem('teacherToken')));
+    return this.http.get<Course[]>(this.url + "/teacherCourses?teacherId=" + teacherId, { headers: headers });
   }
 }

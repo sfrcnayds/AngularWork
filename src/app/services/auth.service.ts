@@ -8,9 +8,11 @@ import { Student } from '../models/Student';
 import { NavComponent } from '../nav/nav.component';
 import { Teacher } from '../models/Teacher';
 import { LoginTeacher } from '../models/LoginTeacher';
+import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 @Injectable()
 export class AuthService {
-  constructor(private httpClient: HttpClient, private router: Router, private toaster: ToastrService) { }
+  constructor(private httpClient: HttpClient, private router: Router, private toaster: ToastrService,
+    private translate: TranslateService) { }
   studentLoginUrl = "https://localhost:44341/api/auth/loginStudent"
   teacherLoginUrl = "https://localhost:44341/api/auth/loginTeacher"
   userToken: any;
@@ -24,10 +26,10 @@ export class AuthService {
       this.userToken = data;
       this.decodedToken = this.jwtHelper.decodeToken(data.toString());
       this.router.navigateByUrl('/student/home');
-      this.toaster.success('Başarılı Giriş', 'Hoş Geldiniz!');
+      this.toaster.success(this.translate.instant("showInformation.succesMessage"), this.translate.instant("showInformation.succesMessageHeader"));
       NavComponent.loginUser = this.decodedToken;
     },error => {
-      this.toaster.error('Hatalı kullanıcı adı veya şifre','Hata');
+      this.toaster.error(this.translate.instant("showInformation.errorMessage"),this.translate.instant("showInformation.errorMessageHeader"));
       loginStudent = new Student();
     });
   }
